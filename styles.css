@@ -31,7 +31,7 @@ body, h1, h2, h3, h4, p, ul, ol {
 /* Set body                               */
 
 body {
-    font-family: 'Outfit', 'sans-serif';
+    font-family: 'Red Hat Text', 'sans-serif';
     width: 100vw;
     min-width: 375px;
     background-color:  hsl(var(--clr-stone100));
@@ -98,6 +98,10 @@ img {
 /*--------------------------------*/
 /* Styling                        */
 /*--------------------------------*/
+
+* {
+    border: 1px solid black;
+}
 
 
 /*--------------------------------*/
