@@ -80,8 +80,7 @@ img {
 
 .flex {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -106,7 +105,7 @@ img {
 
 main {
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 100px auto;
     gap: 1.5rem
 }
@@ -133,7 +132,7 @@ h1 {
     align-items: end;
 }
 
-h2 {
+.type {
     font-size: 1rem;
     font-weight: 400;
 }
@@ -149,8 +148,20 @@ h2 {
     margin-inline: auto;
 }
 
-h4, .item-container p {
+.cart-header, .price {
     color: hsl(var(--clr-red))
+}
+
+.food-image:hover {
+    border: 1px solid hsl(var(--clr-red))
+}
+/* Food Button Styling */
+
+.food-btn {
+    width: 70%;
+    margin-inline: auto;
+    transform: translate(0, -50%);
+    border-radius: 25px;
 }
 
 /*--------------------------------*/
