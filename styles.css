@@ -32,8 +32,8 @@ body, h1, h2, h3, h4, p, ul, ol {
 
 body {
     font-family: 'Red Hat Text', 'sans-serif';
-    width: 100dvw;
-    min-width: 375px;
+    width: 100%;
+    min-width: 320px;
     background-color:  hsl(var(--clr-rose50));
     line-height: 150%;
     letter-spacing: 0px;
@@ -107,7 +107,7 @@ main {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 100px auto;
-    gap: 1.5rem
+    gap: 1.5rem;
 }
 
 .item-wrapper {
@@ -152,13 +152,14 @@ h1 {
     color: hsl(var(--clr-red))
 }
 
-.food-image:hover {
+.image:hover {
     border: 1px solid hsl(var(--clr-red))
 }
 /* Food Button Styling */
 
 .food-btn {
     width: 70%;
+    height: 3rem;
     margin-inline: auto;
     transform: translate(0, -50%);
     border-radius: 25px;
@@ -167,3 +168,32 @@ h1 {
 /*--------------------------------*/
 /* Styling for small screens      */
 /*--------------------------------*/
+
+@media (width < 850px) {
+    .item-wrapper {
+        grid-template-columns: 1fr 1fr;
+        gap: .25rem;
+    }
+}
+
+@media (width < 618px) {
+    body {
+        padding: .25rem;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem
+    }
+
+    .item-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (width < 458px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+}
