@@ -1,9 +1,5 @@
-const foodBtns = document.querySelectorAll(".food-btn")
 const itemWrapper = document.getElementById("item-wrapper")
-
-
-
-
+const cartWrapper = document.getElementById("cart-wrapper")
 
 const items = [
     {
@@ -90,6 +86,20 @@ const items = [
 
 ]
 
+const addToCartBtn = (btn) => {
+    btn.addEventListener(("click"), () => {
+        let numberToAdd = 0;
+        btn.style.backgroundColor = "hsl(var(--clr-red))"
+        btn.style.border = "2px solid hsl(var(--clr-red))"
+        btn.style.justifyContent = "space-between"
+        btn.parentElement.firstElementChild.style.border = "2px solid hsl(var(--clr-red))"
+
+        btnQuantityAdjust(btn, numberToAdd)       
+    }) 
+}
+
+
+
 
 items.forEach((item) => {
     itemWrapper.innerHTML += `
@@ -102,10 +112,15 @@ items.forEach((item) => {
             <p class = "price">${item.price}</p>
         <div>
     `
+    const foodBtns = document.querySelectorAll(".food-btn")
+
+    foodBtns.forEach((btn) => {
+        addToCartBtn(btn)
+    })
+        
 })
 
-
-const btnHTML = (btn, numberToAdd) => {
+const btnQuantityAdjust = (btn, numberToAdd) => {
          btn.innerHTML = `
         <button class = "decrement-btn text-white flex">-</button>    
         <p class = "text-white">${numberToAdd}</p>
@@ -120,21 +135,25 @@ const btnHTML = (btn, numberToAdd) => {
                 }               
             }
 
-            btnHTML(btn, numberToAdd)
-        
+            btnQuantityAdjust(btn, numberToAdd)         
     })
 }
 
+const addItemsToCart = (btn, numberToAdd, cartWrapper) => {
+    cartWrapper.innerHTML = ""
 
-foodBtns.forEach((btn) => {
-    btn.addEventListener(("click"), () => {
-        let numberToAdd = 0;
-        btn.style.backgroundColor = "hsl(var(--clr-red))"
-        btn.style.border = "2px solid hsl(var(--clr-red))"
-        btn.style.justifyContent = "space-between"
-        btn.parentElement.firstElementChild.style.border = "2px solid hsl(var(--clr-red))"
+    let itemInCart = btn.parentElement
+    let itemTotal = itemInCart.price * numberToAdd
 
-        btnHTML(btn, numberToAdd)
-    })
-})
+    cartWrapper.innerHTML += `
+        <div class = "cart-card" id = "${itemInCart.name}-card">
+            <p>${itemInCart.name}</p>
+            <p>${numberToAdd}x</p>
+            <p>@ ${itemInCart.price}</p>
+            <p>${itemTotal}</p>
 
+            <button class = "delete-item-button"></button>
+        
+        </div>
+    `
+}

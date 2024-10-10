@@ -218,15 +218,11 @@ h1 {
     align-items: center;
 }
 
-/* .increment-btn {
-    background-image: url("/product-list-with-cart-main/assets/images/icon-increment-quantity.svg");
-
+.increment-btn:hover, .decrement-btn:hover {
+    background-color: hsl(var(--clr-white));
+    color: hsl(var(--clr-red));
 }
 
-.decrement-btn {
-    background-image: url("/product-list-with-cart-main/assets/images/icon-decrement-quantity.svg");
-
-} */
 
 /*--------------------------------*/
 /* Styling for small screens      */
