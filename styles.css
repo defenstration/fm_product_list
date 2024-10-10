@@ -144,7 +144,7 @@ main {
     max-width: 1200px;
 }
 
-.item-wrapper {
+#item-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: var(--spc-100);
@@ -197,6 +197,7 @@ h1 {
     width: 70%;
     height: 3rem;
     margin-inline: auto;
+    padding: var(--spc-150);
     transform: translate(0, -50%);
     border-radius: 25px;
 }
@@ -209,9 +210,15 @@ h1 {
 .increment-btn, .decrement-btn {
     height: 25px;
     width: 25px;
+    border-radius: 50%;
+    border: 2px solid hsl(var(--clr-white));
+    background-color: transparent;
+    font-size: var(--fs-2);
+    justify-content: center;
+    align-items: center;
 }
 
-.increment-btn {
+/* .increment-btn {
     background-image: url("/product-list-with-cart-main/assets/images/icon-increment-quantity.svg");
 
 }
@@ -219,14 +226,14 @@ h1 {
 .decrement-btn {
     background-image: url("/product-list-with-cart-main/assets/images/icon-decrement-quantity.svg");
 
-}
+} */
 
 /*--------------------------------*/
 /* Styling for small screens      */
 /*--------------------------------*/
 
 @media (width < 850px) {
-    .item-wrapper {
+    #item-wrapper {
         grid-template-columns: 1fr 1fr;
         gap: .25rem;
     }
@@ -242,7 +249,7 @@ h1 {
         gap: .5rem
     }
 
-    .item-wrapper {
+    #item-wrapper {
         grid-template-columns: 1fr;
     }
 }
